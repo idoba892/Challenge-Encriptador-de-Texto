@@ -1,0 +1,133 @@
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Encriptador</title>
+<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+<img  src="logo.png">
+<label >Encriptador</label> 
+    </header>
+    
+    <main>
+    <form >
+ <input class="ingreso" id="informacion" required  placeholder="Escriba Texto aqui.." onclick="imgg()" ></input>
+ <textarea    class="resultado" cols="20" rows="28" id="muestra"></textarea>
+ <img  src="reto.png" class="imag" id="im">
+ <img class="icono" src="icono.png" height="15px" width="15px">
+ <label   class="nota">Solo letras minúscula y sín acentos</label>
+ <input type="button" id="encripta" class="en"value="Encriptar" onclick="encriptar()"/>
+ <input  type="button"  class="de" id="Desencriptar" value="Desencriptar" onclick="desencriptar()" />
+ <input  type="button"  class="cop" id="Copi" value="Copiar" onclick="copiarr()" />
+ <script>
+    var i=0;
+    var entrada=document.getElementById("informacion");
+     var mostrar=document.getElementById("muestra");
+     var res="";
+     var re="";
+     var rt="";
+     var contador=0;
+    
+function encriptar(){
+    
+    for(i=0;i<entrada.value.length;i++){
+
+        if(entrada.value.charAt(i)=="e"){
+
+res+="enter";
+}else{
+    
+    if(entrada.value.charAt(i)=="i"){
+        res+="imes";
+
+    }else{
+
+        if(entrada.value.charAt(i)=="a"){
+            res+="ai";
+    }else{
+    if(entrada.value.charAt(i)=="o"){
+        res+="ober";
+
+    }else{
+
+        if(entrada.value.charAt(i)=="u"){
+            res+="ufat";
+
+        }else{
+
+res+=entrada.value.charAt(i);
+
+        }
+
+    }
+}
+}
+}
+
+}
+if(entrada.value==""){
+document.getElementById("im").style.display="block";   
+}
+mostrar.value=" ";
+mostrar.value=res;
+entrada.value=" ";
+}
+
+function desencriptar(){
+
+for(i=0;i<entrada.value.length;i++){
+re+=entrada.value.charAt(i);
+
+if(re.includes("enter")==true){
+re=re.replace("enter","e");
+
+}else{
+
+if(re.includes("imes")==true){
+re=re.replace("imes","i");
+   
+}else{
+
+if(re.includes("ai")==true){
+    re=re.replace("ai","a");
+}else{
+if(re.includes("ober")==true){
+re=re.replace("ober","o");
+}else{
+
+if(re.includes("ufat")==true){
+    re=re.replace("ufat","u");
+    }
+}
+
+}
+}
+
+}
+}
+mostrar.value=" ";
+mostrar.value=re;
+
+}
+function imgg(){
+
+    document.getElementById("im").style.display="none";
+
+}
+
+function copiarr(){
+mostrar.select();
+document. execCommand('copy');
+}
+
+ </script>
+ </form>
+ 
+</main>
+</body>
+</html>
